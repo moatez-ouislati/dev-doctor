@@ -1,0 +1,163 @@
+:root {
+    --bg-color: #202124;
+    --card-bg: #292a2d;
+    --text-primary: #e8eaed;
+    --text-secondary: #9aa0a6;
+    --accent: #8ab4f8; 
+    --danger: #f28b82;
+    --warning: #fdd663;
+    --success: #81c995;
+    --border: #3c4043;
+}
+
+body {
+    background-color: var(--bg-color);
+    color: var(--text-primary);
+    font-family: 'Segoe UI', system-ui, sans-serif;
+    margin: 0;
+    padding: 16px;
+    font-size: 13px;
+    line-height: 1.5;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 24px;
+}
+
+.brand h1 { margin: 0; font-size: 18px; }
+.subtitle { color: var(--text-secondary); font-size: 11px; }
+
+/* PRO BUTTON STYLING */
+.primary-btn {
+    background-color: var(--accent);
+    color: #202124;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 4px;
+    font-weight: 600;
+    cursor: pointer;
+    min-width: 120px;
+    height: 34px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: filter 0.2s;
+}
+
+.primary-btn:hover { filter: brightness(1.1); }
+.primary-btn:disabled { opacity: 0.7; cursor: not-allowed; }
+
+.spinner-small {
+    width: 16px;
+    height: 16px;
+    border: 2px solid rgba(0,0,0,0.1);
+    border-top: 2px solid #202124;
+    border-radius: 50%;
+    animation: spin 0.8s linear infinite;
+}
+
+.score-card {
+    display: flex;
+    align-items: center;
+    background: var(--card-bg);
+    padding: 24px;
+    border-radius: 8px;
+    margin-bottom: 24px;
+    border: 1px solid var(--border);
+}
+
+.grade-circle {
+    width: 64px;
+    height: 64px;
+    border-radius: 50%;
+    background: rgba(0,0,0,0.2);
+    border: 3px solid var(--success);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 28px;
+    font-weight: 800;
+    margin-right: 24px;
+}
+
+.stats { display: flex; gap: 20px; }
+.stat { display: flex; flex-direction: column; }
+.stat .label { font-size: 11px; color: var(--text-secondary); text-transform: uppercase; }
+
+.issue-card {
+    background: var(--card-bg);
+    border: 1px solid var(--border);
+    border-left: 4px solid var(--accent);
+    padding: 16px;
+    margin-bottom: 12px;
+    border-radius: 6px;
+}
+
+.issue-card.HIGH { border-left-color: var(--danger); }
+.issue-card.MEDIUM { border-left-color: var(--warning); }
+
+.empty-state-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 40px;
+    background: rgba(129, 201, 149, 0.03);
+    border: 1px dashed var(--border);
+    border-radius: 12px;
+    text-align: center;
+}
+
+.success-icon {
+    background: var(--success);
+    color: var(--bg-color);
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 16px;
+}
+
+.secondary-btn {
+    background: var(--border);
+    color: var(--text-primary);
+    border: none;
+    padding: 8px 16px;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-top: 12px;
+}
+
+.hidden { display: none !important; }
+
+@keyframes spin { to { transform: rotate(360deg); } }
+
+.secondary-btn {
+    background: transparent;
+    border: 1px solid var(--border);
+    color: var(--text-primary);
+    padding: 8px 16px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.secondary-btn:hover {
+    background: var(--border);
+}
+
+.issue-card.HIGH { border-left-color: var(--danger); }
+.issue-card.MEDIUM { border-left-color: var(--warning); }
+
+.issue-header { display: flex; justify-content: space-between; margin-bottom: 8px; }
+.issue-title { font-weight: bold; font-size: 14px; }
+.impact-badge { background: #00000050; padding: 2px 6px; border-radius: 4px; font-size: 11px; }
+
+.explanation { color: var(--text-secondary); margin-bottom: 12px; line-height: 1.4; }
+.fix-box { background: #3c404350; padding: 8px; border-radius: 4px; border-left: 2px solid var(--success); }
+
+details { margin-top: 10px; cursor: pointer; color: var(--text-secondary); font-size: 11px; }

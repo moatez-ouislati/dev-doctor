@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="panel.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="brand">
+                <h1>Dev Doctor</h1>
+                <span class="subtitle">Human Performance Translator</span>
+            </div>
+            <button id="run-btn" class="primary-btn">
+                <span id="btn-text">Run Diagnosis</span>
+                <div id="btn-spinner" class="spinner-small hidden"></div>
+            </button>
+        </header>
+
+        <div id="results" class="hidden">
+            <div class="score-card">
+                <div class="grade-circle" id="grade-circle">A</div>
+                <div class="stats">
+                    <div class="stat">
+                        <span class="label">Load Time</span>
+                        <strong id="stat-load">0.00s</strong>
+                    </div>
+                    <div class="stat">
+                        <span class="label">Page Weight</span>
+                        <strong id="stat-weight">0.00 MB</strong>
+                    </div>
+                    <div class="stat">
+                        <span class="label">Blocking</span>
+                        <strong id="stat-blocking">0ms</strong>
+                    </div>
+                </div>
+            </div>
+
+            <h2>Prescription (Prioritized)</h2>
+            <div id="issues-list" class="issues-list"></div>
+        </div>
+    </div>
+    <script type="module" src="panel.js"></script>
+</body>
+</html>

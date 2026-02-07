@@ -1,0 +1,30 @@
+{
+  "manifest_version": 3,
+  "name": "Dev Doctor - Human Performance Translator",
+  "version": "1.0.0",
+  "description": "Your AI copilot for Chrome DevTools. Translates metrics into actionable advice.",
+  "permissions": [
+    "scripting",
+    "activeTab",
+    "storage"
+  ],
+  "host_permissions": [
+    "<all_urls>"
+  ],
+  "devtools_page": "src/devtools/devtools.html",
+  "background": {
+    "service_worker": "src/background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["src/content.js"],
+      "run_at": "document_idle"
+    }
+  ],
+  "icons": {
+    "16": "assets/icon16.png",
+    "48": "assets/icon48.png",
+    "128": "assets/icon128.png"
+  }
+}
